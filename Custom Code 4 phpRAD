@@ -1,14 +1,12 @@
 		//-Begin----Romy Oz--
 		// PHPRad Tip 19: Prevent Delete Error with Foreign Key Rules
        		
-		
-		$db->where("Barang_Id_FK", $arr_rec_id, "in");
+	    $db->where("Barang_Id_FK", $arr_rec_id, "in");
     	$cek = $db->getValue("jualdetail", "count(*)");
 
 	    if($cek > 0){
 		              $this->set_flash_msg("Barang ini tidak bisa dihapus karena sudah dipakai pada transaksi penjualan.","danger");
 		              return $this->redirect("barang");
                 	}
-		
-		
+				
 		// -End---Romy Oz--
